@@ -1,10 +1,15 @@
+import 'dart:io';
+
 import 'package:desktop_window/desktop_window.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spotify_ui/shell.dart';
 
-void main() {
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  DesktopWindow.setMinWindowSize(const Size(600, 800));
+  if (!kIsWeb && (Platform.isMacOS || Platform.isLinux || Platform.isWindows)) {
+    await DesktopWindow.setMinWindowSize(const Size(600, 800));
+  }
   runApp(MyApp());
 }
 
