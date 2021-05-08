@@ -7,15 +7,21 @@ class Shell extends StatelessWidget {
         body: Column(
       children: [
         Expanded(
-            child: Row(
-          children: [
-            Container(
-              width: 280.0,
-              height: double.infinity,
-              color: Colors.green,
-            )
-          ],
-        ))
+          child: Row(
+            children: [
+              Container(
+                width: 280.0,
+                height: double.infinity,
+                color: Colors.green,
+              )
+            ],
+          ),
+        ),
+        Container(
+          height: 84.0,
+          width: double.infinity,
+          color: Colors.blue,
+        )
       ],
     ));
   }
