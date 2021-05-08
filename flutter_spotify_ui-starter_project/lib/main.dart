@@ -1,7 +1,10 @@
+import 'package:desktop_window/desktop_window.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spotify_ui/shell.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  DesktopWindow.setMinWindowSize(const Size(600, 800));
   runApp(MyApp());
 }
 
@@ -48,5 +51,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
