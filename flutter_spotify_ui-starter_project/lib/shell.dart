@@ -9,11 +9,7 @@ class Shell extends StatelessWidget {
         Expanded(
           child: Row(
             children: [
-              Container(
-                width: 280.0,
-                height: double.infinity,
-                color: Colors.green,
-              )
+            SideMenu(),
             ],
           ),
         ),
