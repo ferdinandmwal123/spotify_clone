@@ -21,14 +21,32 @@ class SideMenu extends StatelessWidget {
               ),
             ],
           ),
-          ListTile(
-            title: Text(
-              'Home',
-              style: Theme.of(context).textTheme.bodyText1,
-              overflow: TextOverflow.ellipsis,
-            ),
-          )
+          _SideMenuIconTab()
         ],
+      ),
+    );
+  }
+}
+
+class _SideMenuIconTab extends StatelessWidget {
+  final IconData iconData;
+  final String title;
+  const _SideMenuIconTab({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: Icon(
+        Icons.home,
+        color: Theme.of(context).iconTheme.color,
+        size: 28.0,
+      ),
+      title: Text(
+        'Home',
+        style: Theme.of(context).textTheme.bodyText1,
+        overflow: TextOverflow.ellipsis,
       ),
     );
   }
