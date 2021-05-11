@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spotify_ui/data/data.dart';
 
 class SideMenu extends StatelessWidget {
   @override
@@ -36,7 +37,9 @@ class SideMenu extends StatelessWidget {
             iconData: Icons.audiotrack,
             onTap: () {},
           ),
-          SizedBox(height: 12.0,),
+          SizedBox(
+            height: 12.0,
+          ),
           _LibraryPlaylists(),
         ],
       ),
@@ -81,12 +84,37 @@ class _LibraryPlaylists extends StatefulWidget {
 class __LibraryPlaylistsState extends State<_LibraryPlaylists> {
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: EdgeInsets.symmetric(vertical: 12.0),
-      physics: ClampingScrollPhysics(),
-      children: [
-        Column()
-      ],
+    return Expanded(
+      child: ListView(
+        padding: EdgeInsets.symmetric(vertical: 12.0),
+        physics: ClampingScrollPhysics(),
+        children: [
+          Column(
+            children: [
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                child: Text(
+                  'YOUR LIBRARY',
+                  style: Theme.of(context).textTheme.headline4,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+              ...yourLibrary
+                  .map((e) => ListTile(
+                        dense: true,
+                        title: Text(
+                          e,
+                          style: Theme.of(context).textTheme.bodyText2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        onTap: () {},
+                      ))
+                  .toList(),
+            ],
+          )
+        ],
+      ),
     );
   }
 }
