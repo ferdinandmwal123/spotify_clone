@@ -22,7 +22,11 @@ class SideMenu extends StatelessWidget {
             ],
           ),
           ListTile(
-            title: Text('Home'),
+            title: Text(
+              'Home',
+              style: Theme.of(context).textTheme.bodyText1,
+              overflow: TextOverflow.ellipsis,
+            ),
           )
         ],
       ),
