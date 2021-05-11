@@ -9,13 +9,20 @@ class SideMenu extends StatelessWidget {
       color: Theme.of(context).primaryColor,
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Image.asset(
-              'assets/spotify_logo.png',
-              height: 55.0,
-              filterQuality: FilterQuality.high,
-            ),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Image.asset(
+                  'assets/spotify_logo.png',
+                  height: 55.0,
+                  filterQuality: FilterQuality.high,
+                ),
+              ),
+            ],
+          ),
+          ListTile(
+            title: Text('Home'),
           )
         ],
       ),
