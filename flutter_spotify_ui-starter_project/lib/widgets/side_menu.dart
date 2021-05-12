@@ -102,8 +102,9 @@ class __LibraryPlaylistsState extends State<_LibraryPlaylists> {
     return Expanded(
       child: Scrollbar(
         isAlwaysShown: true,
-        controller: ,
+        controller: _scrollController,
               child: ListView(
+                controller: _scrollController,
           padding: const EdgeInsets.symmetric(vertical: 12.0),
           physics: const ClampingScrollPhysics(),
           children: [
