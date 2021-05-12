@@ -86,10 +86,11 @@ class __LibraryPlaylistsState extends State<_LibraryPlaylists> {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView(
-        padding: EdgeInsets.symmetric(vertical: 12.0),
-        physics: ClampingScrollPhysics(),
+        padding: const EdgeInsets.symmetric(vertical: 12.0),
+        physics: const ClampingScrollPhysics(),
         children: [
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding:
@@ -101,6 +102,32 @@ class __LibraryPlaylistsState extends State<_LibraryPlaylists> {
                 ),
               ),
               ...yourLibrary
+                  .map((e) => ListTile(
+                        dense: true,
+                        title: Text(
+                          e,
+                          style: Theme.of(context).textTheme.bodyText2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        onTap: () {},
+                      ))
+                  .toList(),
+            ],
+          ),
+          const SizedBox(height: 24.0),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                child: Text(
+                  'PLAYLISTS',
+                  style: Theme.of(context).textTheme.headline4,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+              ...playlists
                   .map((e) => ListTile(
                         dense: true,
                         title: Text(
